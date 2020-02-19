@@ -15,7 +15,7 @@ https://www.ebay.ca/itm/12v-100W-3-5Mhz-30Mhz-HF-power-amplifier-low-pass-filter
 T/R Switch module supported:
 https://www.qrpkits.com/ezseries.html#eztrsw
 
-Auto Antenna tuner suppoerted:
+Auto Antenna tuner supported:
 https://www.ebay.ca/itm/KIT-DIY-Automatic-Antenna-Tuner-7x7-ATU-100-mini-by-N7DDC/202740242392?ssPageName=STRK%3AMEBIDX%3AIT&_trksid=p2057872.m2749.l2649
 
 Linear PA supported:
