@@ -1,4 +1,4 @@
-# Radioberry beta V3 Filters-Interface module.
+# Radioberry beta V3 Filters Interface module.
 
 Radioberry project
 https://github.com/pa3gsb/Radioberry-2.x
