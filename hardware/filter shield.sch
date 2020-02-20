@@ -229,7 +229,7 @@ Text Label 7950 1500 0    50   ~ 0
 lpf-80m
 Text Label 5600 4100 0    50   ~ 0
 ptt
-Text Label 10300 1500 0    50   ~ 0
+Text Label 10500 1700 0    50   ~ 0
 txmit
 Text Label 5800 1050 0    50   ~ 0
 bpf-p1
@@ -397,13 +397,13 @@ $EndComp
 $Comp
 L power:GND #PWR0129
 U 1 1 5E57ED2C
-P 9900 1150
-F 0 "#PWR0129" H 9900 900 50  0001 C CNN
-F 1 "GND" V 9900 950 50  0000 C CNN
-F 2 "" H 9900 1150 50  0001 C CNN
-F 3 "" H 9900 1150 50  0001 C CNN
-	1    9900 1150
-	0    -1   -1   0   
+P 10000 700
+F 0 "#PWR0129" H 10000 450 50  0001 C CNN
+F 1 "GND" H 10200 700 50  0000 C CNN
+F 2 "" H 10000 700 50  0001 C CNN
+F 3 "" H 10000 700 50  0001 C CNN
+	1    10000 700 
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	5600 1350 5800 1350
@@ -440,12 +440,12 @@ Wire Wire Line
 $Comp
 L power:+12V #PWR0103
 U 1 1 5E5083D9
-P 9900 1050
-F 0 "#PWR0103" H 9900 900 50  0001 C CNN
-F 1 "+12V" V 9915 1178 50  0000 L CNN
-F 2 "" H 9900 1050 50  0001 C CNN
-F 3 "" H 9900 1050 50  0001 C CNN
-	1    9900 1050
+P 9400 1000
+F 0 "#PWR0103" H 9400 850 50  0001 C CNN
+F 1 "+12V" V 9415 1128 50  0000 L CNN
+F 2 "" H 9400 1000 50  0001 C CNN
+F 3 "" H 9400 1000 50  0001 C CNN
+	1    9400 1000
 	0    1    1    0   
 $EndComp
 $Comp
@@ -473,12 +473,12 @@ $EndComp
 $Comp
 L Connector:Conn_01x06_Male J3
 U 1 1 5E5186BE
-P 9450 1250
-F 0 "J3" H 9558 1631 50  0000 C CNN
-F 1 "TR switch Connector" H 9558 1540 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9450 1250 50  0001 C CNN
-F 3 "~" H 9450 1250 50  0001 C CNN
-	1    9450 1250
+P 8950 1200
+F 0 "J3" H 9058 1581 50  0000 C CNN
+F 1 "TR switch Connector" H 9058 1490 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 8950 1200 50  0001 C CNN
+F 3 "~" H 8950 1200 50  0001 C CNN
+	1    8950 1200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -499,9 +499,9 @@ Wire Wire Line
 Wire Wire Line
 	5850 1550 5600 1550
 Wire Wire Line
-	9900 1050 9650 1050
+	9400 1000 9150 1000
 Wire Wire Line
-	9900 1150 9650 1150
+	9400 1100 9150 1100
 Text Notes 750  1900 0    118  ~ 24
 Power Inputs
 Text Notes 3050 1900 0    118  ~ 24
@@ -510,7 +510,7 @@ Text Notes 5400 1900 0    118  ~ 24
 BPF I/O
 Text Notes 7500 1900 0    118  ~ 24
 LPF I/O
-Text Notes 9150 1900 0    118  ~ 24
+Text Notes 9200 1900 0    118  ~ 24
 TR Switch I/O
 Text Notes 950  4500 0    118  ~ 24
 PA power
@@ -562,4 +562,38 @@ Wire Wire Line
 	7750 3550 7400 3550
 Wire Wire Line
 	7750 4150 7400 4150
+$Comp
+L pspice:R R1
+U 1 1 5E4E14AD
+P 10500 1300
+F 0 "R1" H 10568 1346 50  0000 L CNN
+F 1 "14k" H 10568 1255 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10500 1300 50  0001 C CNN
+F 3 "~" H 10500 1300 50  0001 C CNN
+	1    10500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:PN2222A Q1
+U 1 1 5E4E27AE
+P 10100 1000
+F 0 "Q1" H 9850 950 50  0000 L CNN
+F 1 "PN2222A" H 9700 850 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 10300 925 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 10100 1000 50  0001 L CNN
+	1    10100 1000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10000 700  10000 800 
+Wire Wire Line
+	10500 1050 10500 1000
+Wire Wire Line
+	10500 1000 10300 1000
+Wire Wire Line
+	10500 1700 10500 1550
+Wire Wire Line
+	10000 1200 9400 1200
+Wire Wire Line
+	9400 1200 9400 1100
 $EndSCHEMATC
