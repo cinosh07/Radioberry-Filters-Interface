@@ -6,7 +6,7 @@ https://github.com/pa3gsb/Radioberry-2.x
 This project interface LPF, HPF and T/R Switch to the radiobery I/O over i2c.
 The logic is arduino nano v3 based microcontroller.
 
-![schema](https://github.com/cinosh07/Radioberry-Filters-Interface/blob/master/doc/images/radioberry%20filter%20companion%20board%20pcb%20front.png?raw=true)
+![schema](https://github.com/cinosh07/Radioberry-Filters-Interface/blob/master/doc/images/radioberry%20filter%20companion%20board.png?raw=true)
 
 ![PCB TOP](https://github.com/cinosh07/Radioberry-Filters-Interface/blob/master/doc/images/radioberry%20filter%20companion%20board%20pcb%20front.png?raw=true)
 
