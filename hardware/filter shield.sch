@@ -229,7 +229,7 @@ Text Label 7950 1500 0    50   ~ 0
 lpf-80m
 Text Label 5600 4100 0    50   ~ 0
 ptt
-Text Label 10500 1700 0    50   ~ 0
+Text Label 10800 1000 0    50   ~ 0
 txmit
 Text Label 5800 1050 0    50   ~ 0
 bpf-p1
@@ -510,8 +510,8 @@ Text Notes 5400 1900 0    118  ~ 24
 BPF I/O
 Text Notes 7500 1900 0    118  ~ 24
 LPF I/O
-Text Notes 9200 1900 0    118  ~ 24
-TR Switch I/O
+Text Notes 9200 2200 0    118  ~ 24
+TR Switch-PA I/O
 Text Notes 950  4500 0    118  ~ 24
 PA power
 Text Notes 3950 4650 0    118  ~ 24
@@ -565,13 +565,13 @@ Wire Wire Line
 $Comp
 L pspice:R R1
 U 1 1 5E4E14AD
-P 10500 1300
-F 0 "R1" H 10568 1346 50  0000 L CNN
-F 1 "14k" H 10568 1255 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10500 1300 50  0001 C CNN
-F 3 "~" H 10500 1300 50  0001 C CNN
-	1    10500 1300
-	1    0    0    -1  
+P 10550 1000
+F 0 "R1" H 10618 1046 50  0000 L CNN
+F 1 "14k" H 10618 955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10550 1000 50  0001 C CNN
+F 3 "~" H 10550 1000 50  0001 C CNN
+	1    10550 1000
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Transistor_BJT:PN2222A Q1
@@ -587,13 +587,76 @@ $EndComp
 Wire Wire Line
 	10000 700  10000 800 
 Wire Wire Line
-	10500 1050 10500 1000
-Wire Wire Line
-	10500 1000 10300 1000
-Wire Wire Line
-	10500 1700 10500 1550
-Wire Wire Line
 	10000 1200 9400 1200
 Wire Wire Line
 	9400 1200 9400 1100
+$Comp
+L power:GND #PWR0120
+U 1 1 5E50D80E
+P 10000 1350
+F 0 "#PWR0120" H 10000 1100 50  0001 C CNN
+F 1 "GND" H 10200 1350 50  0000 C CNN
+F 2 "" H 10000 1350 50  0001 C CNN
+F 3 "" H 10000 1350 50  0001 C CNN
+	1    10000 1350
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:R R2
+U 1 1 5E50D819
+P 10550 1650
+F 0 "R2" H 10618 1696 50  0000 L CNN
+F 1 "14k" H 10618 1605 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" H 10550 1650 50  0001 C CNN
+F 3 "~" H 10550 1650 50  0001 C CNN
+	1    10550 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Transistor_BJT:PN2222A Q2
+U 1 1 5E50D823
+P 10100 1650
+F 0 "Q2" H 9850 1600 50  0000 L CNN
+F 1 "PN2222A" H 9700 1500 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 10300 1575 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 10100 1650 50  0001 L CNN
+	1    10100 1650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10000 1350 10000 1450
+Wire Wire Line
+	10000 1850 9400 1850
+Text Label 7400 4050 0    50   ~ 0
+pa
+Text Label 10800 1650 0    50   ~ 0
+pa
+Wire Wire Line
+	7400 4050 7750 4050
+Wire Wire Line
+	9400 1850 9400 1300
+Wire Wire Line
+	9400 1300 9150 1300
+$Comp
+L power:GND #PWR0121
+U 1 1 5E53E548
+P 9150 1400
+F 0 "#PWR0121" H 9150 1150 50  0001 C CNN
+F 1 "GND" V 9150 1200 50  0000 C CNN
+F 2 "" H 9150 1400 50  0001 C CNN
+F 3 "" H 9150 1400 50  0001 C CNN
+	1    9150 1400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 5E540C7C
+P 9150 1200
+F 0 "#PWR0122" H 9150 950 50  0001 C CNN
+F 1 "GND" V 9150 1000 50  0000 C CNN
+F 2 "" H 9150 1200 50  0001 C CNN
+F 3 "" H 9150 1200 50  0001 C CNN
+	1    9150 1200
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
