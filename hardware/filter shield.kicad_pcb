@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 64)
+    (drawings 63)
     (tracks 147)
     (zones 0)
     (modules 27)
@@ -16,7 +16,7 @@
 
   (layers
     (0 F.Cu signal hide)
-    (31 B.Cu signal)
+    (31 B.Cu signal hide)
     (32 B.Adhes user)
     (33 F.Adhes user)
     (34 B.Paste user)
@@ -38,7 +38,7 @@
   )
 
   (setup
-    (last_trace_width 1)
+    (last_trace_width 0.25)
     (user_trace_width 1)
     (user_trace_width 2)
     (trace_clearance 0.2)
@@ -1561,9 +1561,6 @@
   (gr_text "tx sig" (at 120.65 93.98 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text GND (at 123.19 90.17) (layer F.SilkS) (tstamp 5E545B73)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
   (gr_text 80m (at 134.62 69.85 -90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -1800,11 +1797,6 @@
   (segment (start 111.76 102.87) (end 109.22 102.87) (width 1) (layer B.Cu) (net 38))
   (segment (start 109.22 102.87) (end 107.95 101.6) (width 1) (layer B.Cu) (net 38))
   (segment (start 107.95 101.6) (end 107.95 83.82) (width 1) (layer B.Cu) (net 38))
-  (segment (start 139.7 85.09) (end 147.32 85.09) (width 1) (layer B.Cu) (net 49))
-  (segment (start 130.81 87.63) (end 147.32 87.63) (width 1) (layer B.Cu) (net 48))
-  (segment (start 124.46 90.17) (end 147.32 90.17) (width 1) (layer B.Cu) (net 47))
-  (segment (start 121.92 92.71) (end 147.32 92.71) (width 1) (layer B.Cu) (net 46))
-  (segment (start 121.92 90.17) (end 121.92 92.71) (width 1) (layer B.Cu) (net 46))
   (segment (start 121.13 80.01) (end 119.38 80.01) (width 1) (layer B.Cu) (net 40))
   (segment (start 121.92 80.8) (end 121.13 80.01) (width 1) (layer B.Cu) (net 40))
   (segment (start 121.92 80.8) (end 121.92 82.55) (width 1) (layer B.Cu) (net 40))
@@ -1816,6 +1808,11 @@
   (segment (start 140.49 74.93) (end 142.24 74.93) (width 1) (layer B.Cu) (net 43))
   (segment (start 139.7 75.72) (end 140.49 74.93) (width 1) (layer B.Cu) (net 43))
   (segment (start 139.7 77.47) (end 139.7 75.72) (width 1) (layer B.Cu) (net 43))
+  (segment (start 121.92 92.71) (end 147.32 92.71) (width 1) (layer B.Cu) (net 46))
+  (segment (start 121.92 90.17) (end 121.92 92.71) (width 1) (layer B.Cu) (net 46))
+  (segment (start 124.46 90.17) (end 147.32 90.17) (width 1) (layer B.Cu) (net 47))
+  (segment (start 130.81 87.63) (end 147.32 87.63) (width 1) (layer B.Cu) (net 48))
+  (segment (start 139.7 85.09) (end 147.32 85.09) (width 1) (layer B.Cu) (net 49))
   (segment (start 162.56 95.25) (end 167.64 95.25) (width 1) (layer B.Cu) (net 50))
   (segment (start 162.56 97.79) (end 167.64 97.79) (width 1) (layer B.Cu) (net 51))
   (segment (start 162.56 100.33) (end 167.64 100.33) (width 1) (layer B.Cu) (net 52))
