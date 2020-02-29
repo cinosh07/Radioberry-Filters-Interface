@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Radioberry Generic Filters Boards interface. "
+Title "Radioberry Companion Board interface. "
 Date "mar. 31 mars 2015"
-Rev "0.1"
+Rev "0.2"
 Comp "VA2SAJ"
 Comment1 ""
 Comment2 ""
@@ -36,7 +36,7 @@ U 1 1 5E4C059F
 P 1450 1150
 F 0 "J1" H 1530 1192 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 1530 1101 50  0000 L CNN
-F 2 "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x03_P3.50mm_Horizontal" H 1450 1150 50  0001 C CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-3_P5.00mm" H 1450 1150 50  0001 C CNN
 F 3 "~" H 1450 1150 50  0001 C CNN
 	1    1450 1150
 	1    0    0    -1  
@@ -47,7 +47,7 @@ U 1 1 5E4C1E9E
 P 1450 1450
 F 0 "J2" H 1530 1492 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 1530 1401 50  0000 L CNN
-F 2 "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x03_P3.50mm_Horizontal" H 1450 1450 50  0001 C CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-3_P5.00mm" H 1450 1450 50  0001 C CNN
 F 3 "~" H 1450 1450 50  0001 C CNN
 	1    1450 1450
 	1    0    0    -1  
@@ -58,7 +58,7 @@ U 1 1 5E4C9E0F
 P 2050 3050
 F 0 "J6" H 2130 3092 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 2130 3001 50  0000 L CNN
-F 2 "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x03_P3.50mm_Horizontal" H 2050 3050 50  0001 C CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-3_P5.00mm" H 2050 3050 50  0001 C CNN
 F 3 "~" H 2050 3050 50  0001 C CNN
 	1    2050 3050
 	1    0    0    -1  
@@ -66,12 +66,12 @@ $EndComp
 $Comp
 L power:+5V #PWR0101
 U 1 1 5E4CACAA
-P 1050 1050
-F 0 "#PWR0101" H 1050 900 50  0001 C CNN
-F 1 "+5V" V 1065 1223 50  0000 C CNN
-F 2 "" H 1050 1050 50  0001 C CNN
-F 3 "" H 1050 1050 50  0001 C CNN
-	1    1050 1050
+P 1050 1250
+F 0 "#PWR0101" H 1050 1100 50  0001 C CNN
+F 1 "+5V" V 1050 1450 50  0000 C CNN
+F 2 "" H 1050 1250 50  0001 C CNN
+F 3 "" H 1050 1250 50  0001 C CNN
+	1    1050 1250
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -101,12 +101,12 @@ $EndComp
 $Comp
 L power:+12V #PWR0106
 U 1 1 5E50A141
-P 1050 1250
-F 0 "#PWR0106" H 1050 1100 50  0001 C CNN
-F 1 "+12V" V 1065 1378 50  0000 L CNN
-F 2 "" H 1050 1250 50  0001 C CNN
-F 3 "" H 1050 1250 50  0001 C CNN
-	1    1050 1250
+P 1050 1050
+F 0 "#PWR0106" H 1050 900 50  0001 C CNN
+F 1 "+12V" V 1065 1178 50  0000 L CNN
+F 2 "" H 1050 1050 50  0001 C CNN
+F 3 "" H 1050 1050 50  0001 C CNN
+	1    1050 1050
 	0    -1   -1   0   
 $EndComp
 $Comp
