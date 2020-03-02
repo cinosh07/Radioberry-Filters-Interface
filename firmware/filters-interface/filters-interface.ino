@@ -27,10 +27,10 @@ boolean genericMode = false;
 #define lpf_board_xf-lpf-hf
 //https://www.ebay.ca/itm/12v-100W-3-5Mhz-30Mhz-HF-power-amplifier-low-pass-filter-Diy-kit/113761898910?ssPageName=STRK%3AMEBIDX%3AIT&_trksid=p2057872.m2749.l2649
 #if defined lpf_board_xf-lpf-hf
-int lpf_15_10m = 2;
-int lpf_20_17m = 3;
-int lpf_40m = 4;
-int lpf_80m = 5;
+int lpf_15_10m = 5;
+int lpf_20_17m = 4;
+int lpf_40m = 3;
+int lpf_80m = 2;
 #endif
 
 #define bpf_board_russian
@@ -46,17 +46,17 @@ int lpf_80m = 5;
 //12m 0001
 //10m 1001
 #if defined bpf_board_russian
-int bpf_pin1 = 10;
-int bpf_pin2 = 11;
-int bpf_pin3 = 12;
-int bpf_pin4 = 13;
+int bpf_pin1 = 9;
+int bpf_pin2 = 10;
+int bpf_pin3 = 11;
+int bpf_pin4 = 12;
 #endif
 
 
 
-int ptt_pin = 7;
-int tx_pin = 8;
-
+int ptt_pin = 8;
+int tx_pin = 7;
+int pa_pin = 6;
 
 int currentBand = 0;
 boolean transmit = false;
@@ -91,6 +91,8 @@ void setup() {
   pinMode(ptt_pin, INPUT);
   pinMode(tx_pin, OUTPUT);
   digitalWrite(tx_pin, LOW);
+  pinMode(pa_pin, OUTPUT);
+  digitalWrite(pa_pin, LOW);
 
   //Start i2c as slave
   Wire.begin(I2C_ADDRESS);
@@ -100,7 +102,7 @@ void setup() {
 }
 void requestEvent()
 {
-  Serial.print("Connect Request: ");
+
   Serial.print("Connect Request: ");
   if (received == COMMAND_ON_OFF) {
     //Wire.write((uint8_t *)&speed, sizeof(speed));
@@ -115,6 +117,9 @@ void loop() {
   if (ptt != transmit) {
     toggleTxmit(ptt);
   }
+  //  Serial.print("PTT Status: ");
+  //  Serial.println(ptt);
+  //  digitalWrite(tx_pin, ptt);
   delay(50);
 }
 void toggleTxmit(int ptt) {
@@ -122,8 +127,10 @@ void toggleTxmit(int ptt) {
     transmit = ptt;
     if (ptt == 1) {
       digitalWrite(tx_pin, HIGH);
+      digitalWrite(pa_pin, HIGH);
     } else {
       digitalWrite(tx_pin, LOW);
+      digitalWrite(pa_pin, LOW);
     }
   }
 }
@@ -134,8 +141,8 @@ void receiveEvent(int bytes) {
   uint8_t byte1 = 0;
   uint8_t byte2 = 0;
   uint8_t byte3 = 0;
-  int freqHigh [8] = {0,0,0,0,0,0,0,0};
-  int freqLow [7] = {0,0,0,0,0,0,0};
+  int freqHigh [8] = {0, 0, 0, 0, 0, 0, 0, 0};
+  int freqLow [7] = {0, 0, 0, 0, 0, 0, 0};
   while (0 < Wire.available()) {
     byte x = Wire.read();
     if (genericMode == false) {
@@ -159,11 +166,11 @@ void receiveEvent(int bytes) {
       byteCount = byteCount + 1;
     } else {
 
-    
-     
-        freqHigh[byteCount] = x;
-        
-      
+
+
+      freqHigh[byteCount] = x;
+
+
 
 
       byteCount = byteCount + 1;
@@ -185,7 +192,7 @@ void receiveEvent(int bytes) {
     Serial.print("Command: ");
     Serial.println(command);
   } else {
-    
+
     Serial.print("freq Received: ");
     Serial.print(freqHigh[0]);
     Serial.print(freqHigh[1]);
