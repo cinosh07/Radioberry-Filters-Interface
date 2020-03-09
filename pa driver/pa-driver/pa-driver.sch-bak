@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Transistor_BJT:PN2222A Q?
+L Transistor_BJT:PN2222A Q1
 U 1 1 5E5ED680
 P 4900 3450
-F 0 "Q?" H 5090 3496 50  0000 L CNN
+F 0 "Q1" H 5090 3496 50  0000 L CNN
 F 1 "PN2222A" H 5090 3405 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5100 3375 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 4900 3450 50  0001 L CNN
@@ -25,109 +25,109 @@ F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 4900 3450 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:PN2222A Q?
+L Transistor_BJT:PN2222A Q2
 U 1 1 5E5EE68F
-P 2400 6500
-F 0 "Q?" H 2590 6546 50  0000 L CNN
-F 1 "PN2222A" H 2590 6455 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2600 6425 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 2400 6500 50  0001 L CNN
-	1    2400 6500
+P 8600 5150
+F 0 "Q2" H 8790 5196 50  0000 L CNN
+F 1 "PN2222A" H 8790 5105 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 8800 5075 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 8600 5150 50  0001 L CNN
+	1    8600 5150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R1
 U 1 1 5E5EFD5B
 P 4000 3200
-F 0 "R?" H 4070 3246 50  0000 L CNN
+F 0 "R1" H 4070 3246 50  0000 L CNN
 F 1 "3.9k" H 4070 3155 50  0000 L CNN
-F 2 "" V 3930 3200 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 3930 3200 50  0001 C CNN
 F 3 "~" H 4000 3200 50  0001 C CNN
 	1    4000 3200
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R2
 U 1 1 5E5F0546
 P 4000 3700
-F 0 "R?" H 4070 3746 50  0000 L CNN
+F 0 "R2" H 4070 3746 50  0000 L CNN
 F 1 "1k" H 4070 3655 50  0000 L CNN
-F 2 "" V 3930 3700 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 3930 3700 50  0001 C CNN
 F 3 "~" H 4000 3700 50  0001 C CNN
 	1    4000 3700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R4
 U 1 1 5E5F0B81
 P 5000 4250
-F 0 "R?" H 5070 4296 50  0000 L CNN
+F 0 "R4" H 5070 4296 50  0000 L CNN
 F 1 "47ohm" H 5070 4205 50  0000 L CNN
-F 2 "" V 4930 4250 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 4930 4250 50  0001 C CNN
 F 3 "~" H 5000 4250 50  0001 C CNN
 	1    5000 4250
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R3
 U 1 1 5E5F110C
 P 4350 3450
-F 0 "R?" V 4143 3450 50  0000 C CNN
+F 0 "R3" V 4143 3450 50  0000 C CNN
 F 1 "4.7 ohm" V 4234 3450 50  0000 C CNN
-F 2 "" V 4280 3450 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 4280 3450 50  0001 C CNN
 F 3 "~" H 4350 3450 50  0001 C CNN
 	1    4350 3450
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R5
 U 1 1 5E5F27A9
-P 1950 6500
-F 0 "R?" V 1743 6500 50  0000 C CNN
-F 1 "R" V 1834 6500 50  0000 C CNN
-F 2 "" V 1880 6500 50  0001 C CNN
-F 3 "~" H 1950 6500 50  0001 C CNN
-	1    1950 6500
+P 8150 5150
+F 0 "R5" V 7943 5150 50  0000 C CNN
+F 1 "R" V 8034 5150 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 8080 5150 50  0001 C CNN
+F 3 "~" H 8150 5150 50  0001 C CNN
+	1    8150 5150
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C1
 U 1 1 5E5F345F
 P 2600 2700
-F 0 "C?" V 2348 2700 50  0000 C CNN
+F 0 "C1" V 2348 2700 50  0000 C CNN
 F 1 "100nf" V 2439 2700 50  0000 C CNN
-F 2 "" H 2638 2550 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2638 2550 50  0001 C CNN
 F 3 "~" H 2600 2700 50  0001 C CNN
 	1    2600 2700
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C2
 U 1 1 5E5F3DA9
 P 2600 3450
-F 0 "C?" V 2348 3450 50  0000 C CNN
+F 0 "C2" V 2348 3450 50  0000 C CNN
 F 1 "100nf" V 2439 3450 50  0000 C CNN
-F 2 "" H 2638 3300 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2638 3300 50  0001 C CNN
 F 3 "~" H 2600 3450 50  0001 C CNN
 	1    2600 3450
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C3
 U 1 1 5E5F4293
 P 7700 3250
-F 0 "C?" V 7448 3250 50  0000 C CNN
+F 0 "C3" V 7448 3250 50  0000 C CNN
 F 1 "100nf" V 7539 3250 50  0000 C CNN
-F 2 "" H 7738 3100 50  0001 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 7738 3100 50  0001 C CNN
 F 3 "~" H 7700 3250 50  0001 C CNN
 	1    7700 3250
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+12V #PWR?
+L power:+12V #PWR0101
 U 1 1 5E5F4C66
 P 5950 2100
-F 0 "#PWR?" H 5950 1950 50  0001 C CNN
+F 0 "#PWR0101" H 5950 1950 50  0001 C CNN
 F 1 "+12V" V 5965 2228 50  0000 L CNN
 F 2 "" H 5950 2100 50  0001 C CNN
 F 3 "" H 5950 2100 50  0001 C CNN
@@ -135,10 +135,10 @@ F 3 "" H 5950 2100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0102
 U 1 1 5E5F5400
 P 8550 4050
-F 0 "#PWR?" H 8550 3800 50  0001 C CNN
+F 0 "#PWR0102" H 8550 3800 50  0001 C CNN
 F 1 "GND" H 8555 3877 50  0000 C CNN
 F 2 "" H 8550 4050 50  0001 C CNN
 F 3 "" H 8550 4050 50  0001 C CNN
@@ -146,12 +146,12 @@ F 3 "" H 8550 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Transformer_1P_2S T?
+L Device:Transformer_1P_2S T1
 U 1 1 5E5F77E7
 P 4600 2500
-F 0 "T?" H 4600 3081 50  0000 C CNN
+F 0 "T1" H 4600 3081 50  0000 C CNN
 F 1 "Transformer_1P_2S" H 4600 2990 50  0000 C CNN
-F 2 "" H 4600 2500 50  0001 C CNN
+F 2 "pa-driver:Transformer2 1p 2s Binocular" H 4600 2500 50  0001 C CNN
 F 3 "~" H 4600 2500 50  0001 C CNN
 	1    4600 2500
 	1    0    0    -1  
@@ -200,10 +200,10 @@ Wire Wire Line
 Wire Wire Line
 	2750 2700 4200 2700
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0103
 U 1 1 5E5FF74F
 P 5000 4750
-F 0 "#PWR?" H 5000 4500 50  0001 C CNN
+F 0 "#PWR0103" H 5000 4500 50  0001 C CNN
 F 1 "GND" H 5005 4577 50  0000 C CNN
 F 2 "" H 5000 4750 50  0001 C CNN
 F 3 "" H 5000 4750 50  0001 C CNN
@@ -220,10 +220,10 @@ Connection ~ 5000 4500
 Wire Wire Line
 	5000 4500 5000 4750
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0104
 U 1 1 5E6011B0
 P 2200 3450
-F 0 "#PWR?" H 2200 3200 50  0001 C CNN
+F 0 "#PWR0104" H 2200 3200 50  0001 C CNN
 F 1 "GND" V 2205 3322 50  0000 R CNN
 F 2 "" H 2200 3450 50  0001 C CNN
 F 3 "" H 2200 3450 50  0001 C CNN
@@ -242,45 +242,45 @@ Wire Wire Line
 	5350 2100 5950 2100
 Connection ~ 5350 2100
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H1
 U 1 1 5E607763
 P 2200 2600
-F 0 "H?" H 2300 2649 50  0000 L CNN
+F 0 "H1" H 2300 2649 50  0000 L CNN
 F 1 "MountingHole_Pad" H 2300 2558 50  0000 L CNN
-F 2 "" H 2200 2600 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 2600 50  0001 C CNN
 F 3 "~" H 2200 2600 50  0001 C CNN
 	1    2200 2600
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H2
 U 1 1 5E607FA9
 P 2200 3350
-F 0 "H?" H 2300 3399 50  0000 L CNN
+F 0 "H2" H 2300 3399 50  0000 L CNN
 F 1 "MountingHole_Pad" H 2300 3308 50  0000 L CNN
-F 2 "" H 2200 3350 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 3350 50  0001 C CNN
 F 3 "~" H 2200 3350 50  0001 C CNN
 	1    2200 3350
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H3
 U 1 1 5E6085AB
 P 8500 3250
-F 0 "H?" V 8454 3400 50  0000 L CNN
+F 0 "H3" V 8454 3400 50  0000 L CNN
 F 1 "MountingHole_Pad" V 8545 3400 50  0000 L CNN
-F 2 "" H 8500 3250 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 8500 3250 50  0001 C CNN
 F 3 "~" H 8500 3250 50  0001 C CNN
 	1    8500 3250
 	0    1    1    0   
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H4
 U 1 1 5E608EA9
 P 8550 3950
-F 0 "H?" H 8650 3999 50  0000 L CNN
+F 0 "H4" H 8650 3999 50  0000 L CNN
 F 1 "MountingHole_Pad" H 8650 3908 50  0000 L CNN
-F 2 "" H 8550 3950 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 8550 3950 50  0001 C CNN
 F 3 "~" H 8550 3950 50  0001 C CNN
 	1    8550 3950
 	1    0    0    -1  
@@ -299,21 +299,21 @@ Text Notes 4450 2550 0    50   ~ 10
 Text Notes 4850 2950 0    50   ~ 10
 T1: 1 - 3 turns\n      2 - 5 turns\n      3 - 1 turn
 $Comp
-L Connector:Conn_01x02_Female J?
+L Connector:Conn_01x02_Female J1
 U 1 1 5E61225F
 P 8050 4400
-F 0 "J?" V 7896 4448 50  0000 L CNN
+F 0 "J1" V 7896 4448 50  0000 L CNN
 F 1 "Conn_01x02_Female" V 7987 4448 50  0000 L CNN
-F 2 "" H 8050 4400 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8050 4400 50  0001 C CNN
 F 3 "~" H 8050 4400 50  0001 C CNN
 	1    8050 4400
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+12V #PWR?
+L power:+12V #PWR0105
 U 1 1 5E61376B
 P 7950 4200
-F 0 "#PWR?" H 7950 4050 50  0001 C CNN
+F 0 "#PWR0105" H 7950 4050 50  0001 C CNN
 F 1 "+12V" H 7965 4373 50  0000 C CNN
 F 2 "" H 7950 4200 50  0001 C CNN
 F 3 "" H 7950 4200 50  0001 C CNN
@@ -327,4 +327,48 @@ Wire Wire Line
 Connection ~ 8550 4050
 Text Notes 7850 4600 0    50   ~ 0
 12v input
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 5E67053F
+P 9400 900
+F 0 "H5" H 9500 946 50  0000 L CNN
+F 1 "M1" H 9500 855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9400 900 50  0001 C CNN
+F 3 "~" H 9400 900 50  0001 C CNN
+	1    9400 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 5E670E6D
+P 9400 1200
+F 0 "H6" H 9500 1246 50  0000 L CNN
+F 1 "M2" H 9500 1155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9400 1200 50  0001 C CNN
+F 3 "~" H 9400 1200 50  0001 C CNN
+	1    9400 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 5E671848
+P 9400 1500
+F 0 "H7" H 9500 1546 50  0000 L CNN
+F 1 "M3" H 9500 1455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9400 1500 50  0001 C CNN
+F 3 "~" H 9400 1500 50  0001 C CNN
+	1    9400 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 5E671EEE
+P 9400 1800
+F 0 "H8" H 9500 1846 50  0000 L CNN
+F 1 "M4" H 9500 1755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 9400 1800 50  0001 C CNN
+F 3 "~" H 9400 1800 50  0001 C CNN
+	1    9400 1800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
