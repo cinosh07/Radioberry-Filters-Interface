@@ -1,4 +1,4 @@
-# Radioberry beta V3 - 9db PA Driver Module.
+# Radioberry beta V3 RPI4 - 9db PA Driver Module.
 
 Radioberry project
 https://github.com/pa3gsb/Radioberry-2.x
