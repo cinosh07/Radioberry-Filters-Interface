@@ -25,17 +25,6 @@ F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 4900 3450 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:PN2222A Q2
-U 1 1 5E5EE68F
-P 8600 5150
-F 0 "Q2" H 8790 5196 50  0000 L CNN
-F 1 "PN2222A" H 8790 5105 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 8800 5075 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 8600 5150 50  0001 L CNN
-	1    8600 5150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R1
 U 1 1 5E5EFD5B
 P 4000 3200
@@ -80,25 +69,14 @@ F 3 "~" H 4350 3450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R5
-U 1 1 5E5F27A9
-P 8150 5150
-F 0 "R5" V 7943 5150 50  0000 C CNN
-F 1 "R" V 8034 5150 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 8080 5150 50  0001 C CNN
-F 3 "~" H 8150 5150 50  0001 C CNN
-	1    8150 5150
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:C C1
 U 1 1 5E5F345F
-P 2600 2700
-F 0 "C1" V 2348 2700 50  0000 C CNN
-F 1 "100nf" V 2439 2700 50  0000 C CNN
-F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2638 2550 50  0001 C CNN
-F 3 "~" H 2600 2700 50  0001 C CNN
-	1    2600 2700
+P 2600 2300
+F 0 "C1" V 2348 2300 50  0000 C CNN
+F 1 "100nf" V 2439 2300 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2638 2150 50  0001 C CNN
+F 3 "~" H 2600 2300 50  0001 C CNN
+	1    2600 2300
 	0    1    1    0   
 $EndComp
 $Comp
@@ -185,10 +163,6 @@ Connection ~ 4000 3450
 Wire Wire Line
 	4000 3450 4000 3550
 Wire Wire Line
-	4200 2300 3600 2300
-Wire Wire Line
-	3600 2300 3600 4000
-Wire Wire Line
 	3600 4000 5000 4000
 Wire Wire Line
 	5000 3650 5000 4000
@@ -197,8 +171,6 @@ Wire Wire Line
 	5000 4000 5000 4100
 Wire Wire Line
 	2750 3450 4000 3450
-Wire Wire Line
-	2750 2700 4200 2700
 $Comp
 L power:GND #PWR0103
 U 1 1 5E5FF74F
@@ -244,12 +216,12 @@ Connection ~ 5350 2100
 $Comp
 L Mechanical:MountingHole_Pad H1
 U 1 1 5E607763
-P 2200 2600
-F 0 "H1" H 2300 2649 50  0000 L CNN
-F 1 "In-Sig" H 2300 2558 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 2600 50  0001 C CNN
-F 3 "~" H 2200 2600 50  0001 C CNN
-	1    2200 2600
+P 2200 2200
+F 0 "H1" H 2300 2249 50  0000 L CNN
+F 1 "In-Sig" H 2300 2158 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 2200 50  0001 C CNN
+F 3 "~" H 2200 2200 50  0001 C CNN
+	1    2200 2200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -289,7 +261,7 @@ Wire Wire Line
 	2200 3450 2450 3450
 Connection ~ 2200 3450
 Wire Wire Line
-	2200 2700 2450 2700
+	2200 2300 2450 2300
 Text Notes 4700 2300 0    50   ~ 10
 1
 Text Notes 4700 2800 0    50   ~ 10
@@ -371,4 +343,10 @@ F 3 "~" H 9400 1800 50  0001 C CNN
 	1    9400 1800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4200 2700 3600 2700
+Wire Wire Line
+	3600 2700 3600 4000
+Wire Wire Line
+	2750 2300 4200 2300
 $EndSCHEMATC

@@ -25,17 +25,6 @@ F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 4900 3450 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:PN2222A Q2
-U 1 1 5E5EE68F
-P 8600 5150
-F 0 "Q2" H 8790 5196 50  0000 L CNN
-F 1 "PN2222A" H 8790 5105 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 8800 5075 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 8600 5150 50  0001 L CNN
-	1    8600 5150
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R1
 U 1 1 5E5EFD5B
 P 4000 3200
@@ -77,17 +66,6 @@ F 1 "4.7 ohm" V 4234 3450 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 4280 3450 50  0001 C CNN
 F 3 "~" H 4350 3450 50  0001 C CNN
 	1    4350 3450
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5E5F27A9
-P 8150 5150
-F 0 "R5" V 7943 5150 50  0000 C CNN
-F 1 "R" V 8034 5150 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical" V 8080 5150 50  0001 C CNN
-F 3 "~" H 8150 5150 50  0001 C CNN
-	1    8150 5150
 	0    1    1    0   
 $EndComp
 $Comp
@@ -185,10 +163,6 @@ Connection ~ 4000 3450
 Wire Wire Line
 	4000 3450 4000 3550
 Wire Wire Line
-	4200 2300 3600 2300
-Wire Wire Line
-	3600 2300 3600 4000
-Wire Wire Line
 	3600 4000 5000 4000
 Wire Wire Line
 	5000 3650 5000 4000
@@ -197,8 +171,6 @@ Wire Wire Line
 	5000 4000 5000 4100
 Wire Wire Line
 	2750 3450 4000 3450
-Wire Wire Line
-	2750 2700 4200 2700
 $Comp
 L power:GND #PWR0103
 U 1 1 5E5FF74F
@@ -246,7 +218,7 @@ L Mechanical:MountingHole_Pad H1
 U 1 1 5E607763
 P 2200 2600
 F 0 "H1" H 2300 2649 50  0000 L CNN
-F 1 "MountingHole_Pad" H 2300 2558 50  0000 L CNN
+F 1 "In-Sig" H 2300 2558 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 2600 50  0001 C CNN
 F 3 "~" H 2200 2600 50  0001 C CNN
 	1    2200 2600
@@ -257,7 +229,7 @@ L Mechanical:MountingHole_Pad H2
 U 1 1 5E607FA9
 P 2200 3350
 F 0 "H2" H 2300 3399 50  0000 L CNN
-F 1 "MountingHole_Pad" H 2300 3308 50  0000 L CNN
+F 1 "GND Sig" H 2300 3308 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 2200 3350 50  0001 C CNN
 F 3 "~" H 2200 3350 50  0001 C CNN
 	1    2200 3350
@@ -268,7 +240,7 @@ L Mechanical:MountingHole_Pad H3
 U 1 1 5E6085AB
 P 8500 3250
 F 0 "H3" V 8454 3400 50  0000 L CNN
-F 1 "MountingHole_Pad" V 8545 3400 50  0000 L CNN
+F 1 "Out-sig" V 8545 3400 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 8500 3250 50  0001 C CNN
 F 3 "~" H 8500 3250 50  0001 C CNN
 	1    8500 3250
@@ -279,7 +251,7 @@ L Mechanical:MountingHole_Pad H4
 U 1 1 5E608EA9
 P 8550 3950
 F 0 "H4" H 8650 3999 50  0000 L CNN
-F 1 "MountingHole_Pad" H 8650 3908 50  0000 L CNN
+F 1 "GND" H 8650 3908 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 8550 3950 50  0001 C CNN
 F 3 "~" H 8550 3950 50  0001 C CNN
 	1    8550 3950
@@ -371,4 +343,14 @@ F 3 "~" H 9400 1800 50  0001 C CNN
 	1    9400 1800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2750 2700 3250 2700
+Wire Wire Line
+	3250 2700 3250 2300
+Wire Wire Line
+	3250 2300 4200 2300
+Wire Wire Line
+	4200 2700 3600 2700
+Wire Wire Line
+	3600 2700 3600 4000
 $EndSCHEMATC
