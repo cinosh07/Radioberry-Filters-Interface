@@ -18,10 +18,10 @@ const int FILTER_15m = 264;
 const int FILTER_12m = 232;
 const int FILTER_10m = 232;
 const int FILTER_6m = 232;
-
+int currentCW = 0;
 boolean genericMode = false;
 
-#define debug
+//#define debug
 
 //Pin definitions
 #define lpf_board_xf-lpf-hf
@@ -52,20 +52,16 @@ int bpf_pin3 = 11;
 int bpf_pin4 = 12;
 #endif
 
-
-
 int ptt_pin = 8;
 int tx_pin = 7;
 int pa_pin = 6;
 
 int currentBand = 0;
-boolean transmit = false;
+boolean transmit = 0;
 boolean transmitAllowed = true;
 
 void setup() {
-#if defined debug
-  Serial.begin(115200);
-#endif
+
 #if defined lpf_board_xf-lpf-hf
   pinMode(lpf_15_10m, OUTPUT);
   pinMode(lpf_20_17m, OUTPUT);
@@ -88,38 +84,38 @@ void setup() {
   digitalWrite(bpf_pin4, LOW);
 #endif
 
+  //Start i2c as slave
+  Wire.begin(I2C_ADDRESS);
+  Wire.onRequest(requestEvent);
+  Wire.onReceive(receiveEvent);
+
   pinMode(ptt_pin, INPUT);
   pinMode(tx_pin, OUTPUT);
   digitalWrite(tx_pin, LOW);
   pinMode(pa_pin, OUTPUT);
   digitalWrite(pa_pin, LOW);
 
-  //Start i2c as slave
-  Wire.begin(I2C_ADDRESS);
-  Wire.onRequest(requestEvent);
-  Wire.onReceive(receiveEvent);
-
+#if defined debug
+  Serial.begin(115200);
+#endif
 }
 void requestEvent()
 {
-
-  Serial.print("Connect Request: ");
   if (received == COMMAND_ON_OFF) {
-    //Wire.write((uint8_t *)&speed, sizeof(speed));
+
   } else {
     Wire.write(0);
   }
 }
+int started = 0;
 void loop() {
 
-
   int ptt = digitalRead(ptt_pin);
-  if (ptt != transmit) {
-    toggleTxmit(ptt);
+  if (ptt == HIGH && currentCW == 1) {
+    processPTT(ptt);
+  } else if (ptt == LOW && currentCW == 1) {
+    processPTT(ptt);
   }
-  //  Serial.print("PTT Status: ");
-  //  Serial.println(ptt);
-  //  digitalWrite(tx_pin, ptt);
   delay(50);
 }
 void toggleTxmit(int ptt) {
@@ -142,7 +138,6 @@ void receiveEvent(int bytes) {
   uint8_t byte2 = 0;
   uint8_t byte3 = 0;
   int freqHigh [8] = {0, 0, 0, 0, 0, 0, 0, 0};
-  int freqLow [7] = {0, 0, 0, 0, 0, 0, 0};
   while (0 < Wire.available()) {
     byte x = Wire.read();
     if (genericMode == false) {
@@ -159,56 +154,93 @@ void receiveEvent(int bytes) {
       }
       if (byte1 == 2 && byte2 == 2 && byte3 == 3) {
         genericMode = true;
-#if defined debug
-        Serial.println("Generic Mode set to true");
-#endif
+        byte1 = 0;
+        //#if defined debug
+        //        Serial.println("Generic Mode set to true");
+        //#endif
       }
       byteCount = byteCount + 1;
     } else {
 
+      if (byteCount == 0) {
+        byte1 = x;
+      }
+      if (byteCount == 1) {
+        byte2 = x;
+        command = command + (byte2 * 100);
+      }
+      if (byteCount == 2) {
+        byte3 = x;
+        command = command + byte3;
+      }
 
-
-      freqHigh[byteCount] = x;
-
-
-
+      if (byteCount > 0) {
+        freqHigh[byteCount - 1] = x;
+      }
 
       byteCount = byteCount + 1;
-#if defined debug
-      Serial.println("Generic Mode Command Received");
-#endif
     }
   }
-#if defined debug
-  if (genericMode == false) {
-    Serial.print("Bytes: ");
-    Serial.println(bytes);
-    Serial.print("byte1: ");
-    Serial.println(byte1, HEX);
-    Serial.print("byte2: ");
-    Serial.println(byte2, HEX);
-    Serial.print("byte3: ");
-    Serial.println(byte3, HEX);
-    Serial.print("Command: ");
-    Serial.println(command);
-  } else {
 
-    Serial.print("freq Received: ");
-    Serial.print(freqHigh[0]);
-    Serial.print(freqHigh[1]);
-    Serial.print(freqHigh[2]);
-    Serial.print(freqHigh[3]);
-    Serial.print(freqHigh[4]);
-    Serial.print(freqHigh[5]);
-    Serial.print(freqHigh[6]);
-    Serial.println(freqHigh[7]);
-  }
+#if defined debug
+  Serial.print("Command Status: ");
+  Serial.println(command);
+  Serial.print("Byte1 Status: ");
+  Serial.println(byte1);
+  Serial.print("Byte2 Status: ");
+  Serial.println(byte2);
+  Serial.print("Byte3 Status: ");
+  Serial.println(byte3);
+  Serial.print("freq Received: ");
+  Serial.print(freqHigh[0]);
+  Serial.print(freqHigh[1]);
+  Serial.print(freqHigh[2]);
+  Serial.print(freqHigh[3]);
+  Serial.print(freqHigh[4]);
+  Serial.print(freqHigh[5]);
+  Serial.print(freqHigh[6]);
+  Serial.println(freqHigh[7]);
 #endif
-  processCommand(command);
+  int pttTrig = digitalRead(ptt_pin);
+  if (byte1 == 3 && pttTrig == HIGH && byte2 > 0) {
+    currentCW = byte3;
+    processPTT(byte2);
+    command = 0;
+  } else if (byte1 == 3 && pttTrig == HIGH && byte3 > 0) {
+    currentCW = byte3;
+    processPTT(byte3);
+    command = 0;
+  } else if (byte1 == 3) {
+    currentCW = byte3;
+    processPTT(0);
+
+  } else {
+    currentCW = 0;
+    processPTT(0);
+  }
+  if (byte1 == 4) {
+    processFrequency(freqHigh);
+    command = 0;
+
+  }
+  if (command != 0) {
+#if defined debug
+    Serial.print("Command Sended: ");
+    Serial.println(command);
+#endif
+    processCommand(command);
+  }
+
+}
+void processPTT(int command) {
+  digitalWrite(tx_pin, command);
+  digitalWrite(pa_pin, command);
+}
+void processFrequency(int command) {
 
 }
 void processCommand(int command) {
-
+  started =  1;
   if (currentBand != command) {
     currentBand = command;
     switch (command) {
@@ -375,7 +407,7 @@ void processCommand(int command) {
         //Wire.write(0);
 #if defined bpf_board_russian
         digitalWrite(bpf_pin1, LOW);
-        digitalWrite(bpf_pin2, LOW);
+        digitalWrite(bpf_pin2, HIGH);
         digitalWrite(bpf_pin3, LOW);
         digitalWrite(bpf_pin4, LOW);
 #endif
